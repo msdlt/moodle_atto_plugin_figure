@@ -98,78 +98,78 @@ var CSS = {
     COMPONENTNAME = 'atto_figure',
 
     TEMPLATE = '' +
-            '<form class="atto_form">' +
-                '<label for="{{elementid}}_{{CSS.INPUTURL}}">{{get_string "enterurl" component}}</label>' +
-                '<input class="fullwidth {{CSS.INPUTURL}}" type="url" id="{{elementid}}_{{CSS.INPUTURL}}" size="32"/>' +
-                '<br/>' +
+    '<form class="atto_form">' +
+    '<label for="{{elementid}}_{{CSS.INPUTURL}}">{{get_string "enterurl" component}}</label>' +
+    '<input class="fullwidth {{CSS.INPUTURL}}" type="url" id="{{elementid}}_{{CSS.INPUTURL}}" size="32"/>' +
+    '<br/>' +
 
-                // Add the repository browser button.
-                '{{#if showFilepicker}}' +
-                    '<button class="{{CSS.IMAGEBROWSER}}" type="button">{{get_string "browserepositories" component}}</button>' +
-                '{{/if}}' +
+    // Add the repository browser button.
+    '{{#if showFilepicker}}' +
+    '<button class="{{CSS.IMAGEBROWSER}}" type="button">{{get_string "browserepositories" component}}</button>' +
+    '{{/if}}' +
 
-                // Add the Alt box.
-                '<div style="display:none" role="alert" class="warning {{CSS.IMAGEALTWARNING}}">' +
-                    '{{get_string "presentationoraltrequired" component}}' +
-                '</div>' +
-                '<label for="{{elementid}}_{{CSS.INPUTALT}}">{{get_string "enteralt" component}}</label>' +
-                '<input class="fullwidth {{CSS.INPUTALT}}" type="text" value="" id="{{elementid}}_{{CSS.INPUTALT}}" size="32"/>' +
-                '<br/>' +
+    // Add the Alt box.
+    '<div style="display:none" role="alert" class="warning {{CSS.IMAGEALTWARNING}}">' +
+    '{{get_string "presentationoraltrequired" component}}' +
+    '</div>' +
+    '<label for="{{elementid}}_{{CSS.INPUTALT}}">{{get_string "enteralt" component}}</label>' +
+    '<input class="fullwidth {{CSS.INPUTALT}}" type="text" value="" id="{{elementid}}_{{CSS.INPUTALT}}" size="32"/>' +
+    '<br/>' +
 
-                // Add the presentation select box.
-                '<input type="checkbox" class="{{CSS.IMAGEPRESENTATION}}" id="{{elementid}}_{{CSS.IMAGEPRESENTATION}}"/>' +
-                '<label class="sameline" for="{{elementid}}_{{CSS.IMAGEPRESENTATION}}">' +
-                    '{{get_string "presentation" component}}' +
-                '</label>' +
-                '<br/>' +
+    // Add the presentation select box.
+    '<input type="checkbox" class="{{CSS.IMAGEPRESENTATION}}" id="{{elementid}}_{{CSS.IMAGEPRESENTATION}}"/>' +
+    '<label class="sameline" for="{{elementid}}_{{CSS.IMAGEPRESENTATION}}">' +
+    '{{get_string "presentation" component}}' +
+    '</label>' +
+    '<br/>' +
 
-                // Add the size entry boxes.
-                '<label class="sameline" for="{{elementid}}_{{CSS.INPUTSIZE}}">{{get_string "size" component}}</label>' +
-                '<div id="{{elementid}}_{{CSS.INPUTSIZE}}" class="{{CSS.INPUTSIZE}}">' +
-                '<label class="accesshide" for="{{elementid}}_{{CSS.INPUTWIDTH}}">{{get_string "width" component}}</label>' +
-                '<input type="text" class="{{CSS.INPUTWIDTH}} input-mini" id="{{elementid}}_{{CSS.INPUTWIDTH}}" size="4"/> x ' +
+    // Add the size entry boxes.
+    '<label class="sameline" for="{{elementid}}_{{CSS.INPUTSIZE}}">{{get_string "size" component}}</label>' +
+    '<div id="{{elementid}}_{{CSS.INPUTSIZE}}" class="{{CSS.INPUTSIZE}}">' +
+    '<label class="accesshide" for="{{elementid}}_{{CSS.INPUTWIDTH}}">{{get_string "width" component}}</label>' +
+    '<input type="text" class="{{CSS.INPUTWIDTH}} input-mini" id="{{elementid}}_{{CSS.INPUTWIDTH}}" size="4"/> x ' +
 
-                // Add the height entry box.
-                '<label class="accesshide" for="{{elementid}}_{{CSS.INPUTHEIGHT}}">{{get_string "height" component}}</label>' +
-                '<input type="text" class="{{CSS.INPUTHEIGHT}} input-mini" id="{{elementid}}_{{CSS.INPUTHEIGHT}}" size="4"/>' +
+    // Add the height entry box.
+    '<label class="accesshide" for="{{elementid}}_{{CSS.INPUTHEIGHT}}">{{get_string "height" component}}</label>' +
+    '<input type="text" class="{{CSS.INPUTHEIGHT}} input-mini" id="{{elementid}}_{{CSS.INPUTHEIGHT}}" size="4"/>' +
 
-                // Add the constrain checkbox.
-                '<input type="checkbox" class="{{CSS.INPUTCONSTRAIN}} sameline" id="{{elementid}}_{{CSS.INPUTCONSTRAIN}}"/>' +
-                '<label for="{{elementid}}_{{CSS.INPUTCONSTRAIN}}">{{get_string "constrain" component}}</label>' +
-                '</div>' +
+    // Add the constrain checkbox.
+    '<input type="checkbox" class="{{CSS.INPUTCONSTRAIN}} sameline" id="{{elementid}}_{{CSS.INPUTCONSTRAIN}}"/>' +
+    '<label for="{{elementid}}_{{CSS.INPUTCONSTRAIN}}">{{get_string "constrain" component}}</label>' +
+    '</div>' +
 
-                // Add the alignment selector.
-                '<label class="sameline" for="{{elementid}}_{{CSS.INPUTALIGNMENT}}">{{get_string "alignment" component}}</label>' +
-                '<select class="{{CSS.INPUTALIGNMENT}}" id="{{elementid}}_{{CSS.INPUTALIGNMENT}}">' +
-                    '{{#each alignments}}' +
-                        '<option value="{{value}}:{{name}};">{{get_string str ../component}}</option>' +
-                    '{{/each}}' +
-                '</select>' +
-                // Hidden input to store custom styles.
-                '<input type="hidden" class="{{CSS.INPUTCUSTOMSTYLE}}"/>' +
-                '<br/>' +
+    // Add the alignment selector.
+    '<label class="sameline" for="{{elementid}}_{{CSS.INPUTALIGNMENT}}">{{get_string "alignment" component}}</label>' +
+    '<select class="{{CSS.INPUTALIGNMENT}}" id="{{elementid}}_{{CSS.INPUTALIGNMENT}}">' +
+    '{{#each alignments}}' +
+    '<option value="{{value}}:{{name}};">{{get_string str ../component}}</option>' +
+    '{{/each}}' +
+    '</select>' +
+    // Hidden input to store custom styles.
+    '<input type="hidden" class="{{CSS.INPUTCUSTOMSTYLE}}"/>' +
+    '<br/>' +
 
-                // Add the image preview.
-                '<div class="mdl-align">' +
-                '<div class="{{CSS.IMAGEPREVIEWBOX}}">' +
-                    '<img src="#" class="{{CSS.IMAGEPREVIEW}}" alt="" style="display: none;"/>' +
-                '</div>' +
+    // Add the image preview.
+    '<div class="mdl-align">' +
+    '<div class="{{CSS.IMAGEPREVIEWBOX}}">' +
+    '<img src="#" class="{{CSS.IMAGEPREVIEW}}" alt="" style="display: none;"/>' +
+    '</div>' +
 
-                // Add the submit button and close the form.
-                '<button class="{{CSS.INPUTSUBMIT}}" type="submit">{{get_string "saveimage" component}}</button>' +
-                '</div>' +
-            '</form>',
+    // Add the submit button and close the form.
+    '<button class="{{CSS.INPUTSUBMIT}}" type="submit">{{get_string "saveimage" component}}</button>' +
+    '</div>' +
+    '</form>',
 
-        IMAGETEMPLATE = '' +
-            '<figure class=""><figure class="figure">' +
-            '<img src="{{url}}" alt="{{alt}}" ' +
-//                '{{#if width}}width="{{width}}" {{/if}}' +
-//                '{{#if height}}height="{{height}}" {{/if}}' +
-//                '{{#if presentation}}role="presentation" {{/if}}' +
-//                'style="{{alignment}}{{margin}}{{customstyle}}"' +
-                '{{#if classlist}}class="{{classlist}}" {{/if}}' +
-                '{{#if id}}id="{{id}}" {{/if}}' +
-                '/><figcaption class="figure-caption text-xs-left">{{alt}}</figcaption></figure></figure>';
+    IMAGETEMPLATE = '' +
+    '<figure class=""><figure class="figure">' +
+    '<img src="{{url}}" alt="{{alt}}" ' +
+    //                '{{#if width}}width="{{width}}" {{/if}}' +
+    //                '{{#if height}}height="{{height}}" {{/if}}' +
+    //                '{{#if presentation}}role="presentation" {{/if}}' +
+    //                'style="{{alignment}}{{margin}}{{customstyle}}"' +
+    '{{#if classlist}}class="{{classlist}}" {{/if}}' +
+    '{{#if id}}id="{{id}}" {{/if}}' +
+    '/><figcaption class="figure-caption text-xs-left">{{alt}}</figcaption></figure></figure>';
 
 Y.namespace('M.atto_figure').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
     /**
@@ -222,8 +222,12 @@ Y.namespace('M.atto_figure').Button = Y.Base.create('button', Y.M.editor_atto.Ed
         this.editor.on('drop', this._handleDragDrop, this);
 
         // e.preventDefault needed to stop the default event from clobbering the desired behaviour in some browsers.
-        this.editor.on('dragover', function(e){e.preventDefault();}, this);
-        this.editor.on('dragenter', function(e){e.preventDefault();}, this);
+        this.editor.on('dragover', function(e) {
+            e.preventDefault();
+        }, this);
+        this.editor.on('dragenter', function(e) {
+            e.preventDefault();
+        }, this);
     },
 
     /**
@@ -328,7 +332,9 @@ Y.namespace('M.atto_figure').Button = Y.Base.create('button', Y.M.editor_atto.Ed
                         }
                     } else {
                         Y.use('moodle-core-notification-alert', function() {
-                            new M.core.alert({message: M.util.get_string('servererror', 'moodle')});
+                            new M.core.alert({
+                                message: M.util.get_string('servererror', 'moodle')
+                            });
                         });
                         if (placeholder) {
                             placeholder.remove(true);
@@ -341,7 +347,7 @@ Y.namespace('M.atto_figure').Button = Y.Base.create('button', Y.M.editor_atto.Ed
             return false;
         }
 
-},
+    },
 
     /**
      * Handle a click on an image.
@@ -384,7 +390,7 @@ Y.namespace('M.atto_figure').Button = Y.Base.create('button', Y.M.editor_atto.Ed
 
         // Set the dialogue content, and then show the dialogue.
         dialogue.set('bodyContent', this._getDialogueContent())
-                .show();
+            .show();
     },
 
     /**
@@ -396,7 +402,8 @@ Y.namespace('M.atto_figure').Button = Y.Base.create('button', Y.M.editor_atto.Ed
      * @private
      */
     _loadPreviewImage: function(url) {
-        var image = new Image(), self = this;
+        var image = new Image(),
+            self = this;
 
         image.onerror = function() {
             var preview = self._form.one('.' + CSS.IMAGEPREVIEW);
@@ -445,8 +452,8 @@ Y.namespace('M.atto_figure').Button = Y.Base.create('button', Y.M.editor_atto.Ed
                     this.height = 1;
                 }
                 // This is the same as comparing to 3 decimal places.
-                widthRatio = Math.round(1000*parseInt(currentwidth, 10) / this.width);
-                heightRatio = Math.round(1000*parseInt(currentheight, 10) / this.height);
+                widthRatio = Math.round(1000 * parseInt(currentwidth, 10) / this.width);
+                heightRatio = Math.round(1000 * parseInt(currentheight, 10) / this.height);
                 input.set('checked', widthRatio === heightRatio);
             }
 
@@ -499,7 +506,7 @@ Y.namespace('M.atto_figure').Button = Y.Base.create('button', Y.M.editor_atto.Ed
 
         if (canShowFilepicker) {
             this._form.one('.' + CSS.IMAGEBROWSER).on('click', function() {
-                    this.get('host').showFilepicker('image', this._filepickerCallback, this);
+                this.get('host').showFilepicker('image', this._filepickerCallback, this);
             }, this);
         }
 
@@ -592,7 +599,7 @@ Y.namespace('M.atto_figure').Button = Y.Base.create('button', Y.M.editor_atto.Ed
             } else {
                 // Calculate the scaled subFieldValue from the keyFieldValue.
                 subFieldValue = Math.round((keyFieldValue / this._rawImageDimensions[keyFieldType]) *
-                        this._rawImageDimensions[subFieldType]);
+                    this._rawImageDimensions[subFieldType]);
 
                 if (forceHeight) {
                     imagePreview.setStyles({
@@ -704,7 +711,7 @@ Y.namespace('M.atto_figure').Button = Y.Base.create('button', Y.M.editor_atto.Ed
     _getSelectedImageProperties: function() {
         var properties = {
                 src: null,
-                alt :null,
+                alt: null,
                 width: null,
                 height: null,
                 align: '',
